@@ -9,12 +9,10 @@ import org.apache.log4j.Logger;
 public class LadderController {
 
     private static Logger logger = Logger.getLogger(LadderController.class.getClass());
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
 
 
-    @RequestMapping("/hello")
-    public Ladder Hello(@RequestParam(value="filename", defaultValue="smalldict1.txt") String name, @RequestParam(value="word1", defaultValue="cat") String word1,@RequestParam(value="word2", defaultValue="dog") String word2) {
+    @RequestMapping("/wordladder")
+    public Ladder Ladder(@RequestParam(value="filename", defaultValue="smalldict1.txt") String name, @RequestParam(value="word1", defaultValue="cat") String word1,@RequestParam(value="word2", defaultValue="dog") String word2) {
         Wordladder wl = new Wordladder();
         try {
             logger.info("searching from " + word1 + " to " + word2);
